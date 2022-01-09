@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import './App.css';
+import Buttons from './components/Buttons';
+import Cronometro from './components/Cronometro';
 
 class App extends Component{
 
@@ -48,12 +50,8 @@ class App extends Component{
   render(){
     return(
       <div className='container'>
-        <img className='img' src={require('./assets/cronometro.png')} />
-        <a>{this.state.number.toFixed(1)}</a>
-        <div>
-          <a onClick={this.start}>{this.state.botao}</a>
-          <a onClick={this.stop}>LIMPAR</a>
-        </div>
+        <Cronometro number={this.state.number}/>
+        <Buttons botao={this.state.botao} start={this.start} stop={this.stop} />
       </div>
     )
   }
